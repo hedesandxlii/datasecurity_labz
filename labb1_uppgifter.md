@@ -46,3 +46,10 @@ Adds a static string to the password before the hash is calculated. This is
 done the render time-memory attacks useless.
 
 ### Find information and read about *PBKDF2*. Roughly compare the time required to calculate a hash with *PBKDF2* with the time required for a single round of *SHA-1*. You do not have to understand the algorithm in detail.
+Since `SHA-1` can be used in `PBKDF2`, we will use that example. The number of
+times `PBKDF2` uses `SHA-1` depends on the ratio between the *input length* and
+the *derived key length*. 
+
+If we want `PBKDF2` to produce a *derived key* that is dubble the length of the *input*, `SHA-1`
+will run twice inside `PBKDF2`, 3rd the lenght -> it will run thrice, etc.
+
