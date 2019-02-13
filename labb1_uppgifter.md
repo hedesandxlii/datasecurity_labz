@@ -53,3 +53,10 @@ the *derived key length*.
 If we want `PBKDF2` to produce a *derived key* that is dubble the length of the *input*, `SHA-1`
 will run twice inside `PBKDF2`, 3rd the lenght -> it will run thrice, etc.
 
+
+
+## Prep assignment 4
+### Read about hashcat such that you have a rough idea of ithe features.
+
+
+### Assume a password is 7 characters long, each character being in the range `[a-zA-Z0-9]`, i.e. both small and large letters, and numbers. How many such passwords exists?
