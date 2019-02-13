@@ -14,10 +14,20 @@ A rainbow table uses a different *reduction function* for every step in the chai
 this is that 2 chains can only collide on the same step in the chain, resulting in a lower
 probability of collision.
 
-## Prep assignment 2
-### *How is the LAN Manager (LM) hash produced, how is this hash used to authenticate a user, and
-what is the efffective security of LM?*
 
-### *How is the NT LAN Manager version 1 (NTLM) hash produced, how is this hash used to
-authenticate a user, and what is the efffective security of NTLM?*
-First, the server sends a 8 byte, random *challenge*, then the password is hased witn *MD4*, which yields a hash of 16 bytes. This hash is then padded with 5 bytes to create a string of 21 bytes. These are divided into 3, 7-byte DES-keys which encrypts the challenge (3 times). The 3-fold encrypted challenge i then concatinated and sent back as a response to the server.
+
+## Prep assignment 2
+### *How is the LAN Manager (LM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of LM?*
+
+### *How is the NT LAN Manager version 1 (NTLM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of NTLM?*
+#### How is the hash poduced/How does it authenticate the user?
+First, the server sends a 8 byte, random *challenge*, then the password is hased witn *MD4*, which
+yields a hash of 16 bytes. This hash is then padded with 5 bytes to create a string of 21 bytes.
+This hash is divided into 3 7-byte DES-keys which encrypts the same challenge (3 times). The 3-fold
+encrypted challenge is then concatinated and sent back as a response to the server. If the response is correct, the user is authenticated.
+#### What is the effective security of NTLM?
+The algorithm is based on `MD4` and `DES`, but since the same *plaintext* (in
+this case, the challenge) is used with different keys, the response is more
+vurnable than if the challenge would be **hashed once** (with some other
+encryption algorithm then).
+	
