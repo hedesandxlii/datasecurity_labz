@@ -56,8 +56,22 @@ will run twice inside `PBKDF2`. 3rd the lenght means it will run thrice, etc.
 
 
 ## Prep assignment 4
-### Read about hashcat such that you have a rough idea of ithe features.
+### Read about `hashcat` such that you have a rough idea of ithe features.
+Hashcat is run through the terminal, you can start execute it with the syntax:
 
+```
+hashcat [options]... hash|hashfile|hccapxfile [dictionary|mask|directory]...
+```
+
+Interesting options are:
+
+```
+-m (1000|3000)	// Hashtype, 1000 is NTLM and 3000 is LM.
+-o 		// output-file for result.
+...
+```
+
+But we don't need to know that.
 
 ### Assume a password is 7 characters long, each character being in the range `[a-zA-Z0-9]`, i.e. both small and large letters, and numbers. How many such passwords exists?
 In `[a-zA-Z0-9]` there is `26 * 2 + 10 = 62` characters. 62 possibilities on 7
