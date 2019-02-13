@@ -51,7 +51,7 @@ times `PBKDF2` uses `SHA-1` depends on the ratio between the *input length* and
 the *derived key length*. 
 
 If we want `PBKDF2` to produce a *derived key* that is dubble the length of the *input*, `SHA-1`
-will run twice inside `PBKDF2`, 3rd the lenght -> it will run thrice, etc.
+will run twice inside `PBKDF2`. 3rd the lenght means it will run thrice, etc.
 
 
 
@@ -67,6 +67,8 @@ positions `=> 62^7 = `**`3.52 * 10^12`** different passwords.
 
 ## Prep assignnment 5
 ### Look up the meaning of the term *Penetration testing* if it is unfamiliar to you.
+The goal of a pen test is to find weaknesses within a given information system. This can cover
+IT systems, Security Policies (through Social Engineering) or other things.
 
 ### Read this short security bulletin about one of the exploits we will use during the attack:
 https://helpx.adobe.com/security/products/flash-player/apsa15-03.html
