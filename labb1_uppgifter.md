@@ -37,3 +37,10 @@ The algorithm is based on `MD4` and `DES`, but since the same *plaintext* (in
 this case, the challenge) is used with different keys, the response is more
 vurnable than if the challenge would be **hashed once** (with some other
 encryption algorithm then).
+
+
+
+## Prep assignment 3
+### Ensure that you understand what a salt is, and why it is used.
+
+### Find information and read about *PBKDF2*. Roughly compare the time required to calculate a hash with *PBKDF2* with the time required for a single round of *SHA-1*. You do not have to understand the algorithm in detail.
