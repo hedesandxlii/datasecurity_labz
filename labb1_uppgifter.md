@@ -22,6 +22,8 @@ Translates to uppercase and adds padding to 14 bytes.
 Splits into 2 keys and encrypts `KGS!@#$%` with the 2 keys. This yields a 2
 8-byte ciphertexts which are concatenated and returned as a response.
 
+Because the password is uppercased, we get a *"smaller effective character set"*. Because we encrypt the same string, namely `KGS!@#$%`, with 2 different keys, the security is further decreased.
+
 ### *How is the NT LAN Manager version 1 (NTLM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of NTLM?*
 #### How is the hash poduced/How does it authenticate the user?
 First, the server sends a 8 byte, random *challenge*, then the password is hased witn *MD4*, which
