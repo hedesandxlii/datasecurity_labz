@@ -60,3 +60,13 @@ will run twice inside `PBKDF2`, 3rd the lenght -> it will run thrice, etc.
 
 
 ### Assume a password is 7 characters long, each character being in the range `[a-zA-Z0-9]`, i.e. both small and large letters, and numbers. How many such passwords exists?
+In `[a-zA-Z0-9]` there is `26 * 2 + 10 = 62` characters. 62 possibilities on 7
+positions `=> 62^7 = `**`3.52 * 10^12`** different passwords.
+
+
+
+## Prep assignnment 5
+### Look up the meaning of the term Penetrations testing if it is unfamiliar to you.
+
+### Read this short security bulletin about one of the exploits we will use during the attack:
+https://helpx.adobe.com/security/products/flash-player/apsa15-03.html
