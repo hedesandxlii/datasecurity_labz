@@ -19,17 +19,19 @@ probability of collision.
 ## Prep assignment 2
 ### *How is the LAN Manager (LM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of LM?*
 Translates to uppercase and adds padding to 14 bytes.
-Splits into 2 keys and encrypts with KGS!@#$%.
+Splits into 2 keys and encrypts `KGS!@#$%` with the 2 keys. This yields a 2
+8-byte ciphertexts which are concatenated and returned as a response.
 
 ### *How is the NT LAN Manager version 1 (NTLM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of NTLM?*
 #### How is the hash poduced/How does it authenticate the user?
 First, the server sends a 8 byte, random *challenge*, then the password is hased witn *MD4*, which
 yields a hash of 16 bytes. This hash is then padded with 5 bytes to create a string of 21 bytes.
 This hash is divided into 3 7-byte DES-keys which encrypts the same challenge (3 times). The 3-fold
-encrypted challenge is then concatinated and sent back as a response to the server. If the response is correct, the user is authenticated.
+encrypted challenge is then concatinated and sent back as a response to the server. If the response
+is correct, the user is authenticated.
+
 #### What is the effective security of NTLM?
 The algorithm is based on `MD4` and `DES`, but since the same *plaintext* (in
 this case, the challenge) is used with different keys, the response is more
 vurnable than if the challenge would be **hashed once** (with some other
 encryption algorithm then).
-	
