@@ -68,7 +68,8 @@ positions `=> 62^7 = `**`3.52 * 10^12`** different passwords.
 ## Prep assignnment 5
 ### Look up the meaning of the term *Penetration testing* if it is unfamiliar to you.
 The goal of a pen test is to find weaknesses within a given information system. This can cover
-IT systems, Security Policies (through Social Engineering) or other things.
+IT-systems, Security Policies (through Social Engineering) or other things. Pen tests on
+IT-systems can either be automated or manual.
 
 ### Read this short security bulletin about one of the exploits we will use during the attack:
 https://helpx.adobe.com/security/products/flash-player/apsa15-03.html
