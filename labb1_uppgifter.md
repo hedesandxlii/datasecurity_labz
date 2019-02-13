@@ -18,6 +18,8 @@ probability of collision.
 
 ## Prep assignment 2
 ### *How is the LAN Manager (LM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of LM?*
+Translates to uppercase and adds padding to 14 bytes.
+Splits into 2 keys and encrypts with KGS!@#$%.
 
 ### *How is the NT LAN Manager version 1 (NTLM) hash produced, how is this hash used to authenticate a user, and what is the efffective security of NTLM?*
 #### How is the hash poduced/How does it authenticate the user?
