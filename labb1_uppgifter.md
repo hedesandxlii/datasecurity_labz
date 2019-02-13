@@ -66,7 +66,7 @@ positions `=> 62^7 = `**`3.52 * 10^12`** different passwords.
 
 
 ## Prep assignnment 5
-### Look up the meaning of the term Penetrations testing if it is unfamiliar to you.
+### Look up the meaning of the *term Penetrations* testing if it is unfamiliar to you.
 
 ### Read this short security bulletin about one of the exploits we will use during the attack:
 https://helpx.adobe.com/security/products/flash-player/apsa15-03.html
