@@ -12,3 +12,10 @@ A dictionary attack is an attack where you have a database of common passwords a
 A rainbow table uses a different *reduction function* for every step in the chain. The result of
 this is that 2 chains can only collide on the same step in the chain, resulting in a lower
 probability of collision.
+
+## Prep assignment 2
+### *How is the LAN Manager (LM) hash produced, how is this hash used to authenticate a user, and
+what is the efffective security of LM?*
+
+### *How is the NT LAN Manager version 1 (NTLM) hash produced, how is this hash used to
+authenticate a user, and what is the efffective security of NTLM?*
