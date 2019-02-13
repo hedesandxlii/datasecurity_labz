@@ -37,3 +37,8 @@ The algorithm is based on `MD4` and `DES`, but since the same *plaintext* (in
 this case, the challenge) is used with different keys, the response is more
 vurnable than if the challenge would be **hashed once** (with some other
 encryption algorithm then).
+
+
+
+### Ensure that you understand what a salt is, and why it is used.
+Adds a random value that could be hidden in the profile of a user on the site to the password. The database then only stores the checksum of the passwords which means that a thief would not benefit from accessing the password list.
