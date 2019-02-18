@@ -1,5 +1,10 @@
 # LABB 2
 
+## Preparatory assignment 1
+
+//finna instruktioner för login(1)
+man 1 login
+
 ## Preparatory assignment 2
 I `pwfile` finns hashen, men mer ingående:
 
