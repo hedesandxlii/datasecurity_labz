@@ -1,4 +1,14 @@
 # LABB 2
 
 ## Preparatory assignment 2
-I `pwfile` finns hashen.
+I `pwfile` finns hashen, men mer ingående:
+
+
+`/etc/passwd`:
+
+`Username : x : UID : GID : ID string : home directory : login shell`
+
+
+`pwfile`
+
+`Username : password : UID : GID : ID string : home directory : login shell`
