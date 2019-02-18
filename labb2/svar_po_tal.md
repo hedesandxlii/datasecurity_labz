@@ -6,9 +6,9 @@ I `pwfile` finns hashen, men mer ingående:
 
 `/etc/passwd`:
 
-`Username : allways x : UID : GID : ID string : home directory : login shell`
+`Username : always x : UID : GID : ID string : home directory : login shell`
 
 
 `pwfile`
 
-`Username : password  : UID : GID : ID string : home directory : login shell`
+`Username : password : UID : GID : ID string : home directory : login shell`
