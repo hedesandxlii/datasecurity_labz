@@ -32,13 +32,16 @@ int login_user(const char *username)
 
         // Is the stored hash the same as the calculated one?
         if (strcmp(p->pw_passwd, pwhash) == 0) {
+            p->pw_failed = 0;
             printf("\nDucking success mate\n");
         } else {
             p->pw_failed++;
-            if (pwdb_update_user(p)!=0) {
-                printf("pwdb_update_user returned error %s\n",pwdb_err2str(pwdb_errno));
-            }
             printf("\nDucking fail mate %d\n", p->pw_failed);
+        }
+
+        /* Absolut inte copy-paste:ad kod*/
+        if (pwdb_update_user(p)!=0) {
+            printf("pwdb_update_user returned error %s\n",pwdb_err2str(pwdb_errno));
         }
         return 0;
     } else {
@@ -64,13 +67,11 @@ int main(int argc, char **argv)
      * Write "login: " and read user input. Copies the username to the
      * username variable.
      */
-    while(1) {
-        read_username(username);
+    read_username(username);
 
-        if (login_user(username) == NOUSER) {
-            printf("\nFound no user with name: %s\n", username); 
-            return 0;
-        }
+    if (login_user(username) == NOUSER) {
+        printf("\nFound no user with name: %s\n", username); 
+        return 0;
     }
 }
 
