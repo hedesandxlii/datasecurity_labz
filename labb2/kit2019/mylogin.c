@@ -15,7 +15,34 @@
 #define USERNAME_SIZE (32)
 #define NOUSER (-1)
 
+char *substring(char *string, int position, int length){
 
+
+	char *pointer;
+	int c;
+		
+
+	pointer = malloc(length+1);
+
+	if(pointer == NULL)
+		{
+		printf("fel fel fel");
+		exit(1);
+	}
+
+	for(c=0; c<length ; c++)
+	{
+		*(pointer+c) = *(string+position-1);
+		string++;
+	}
+
+	*(pointer+c) = '\0';
+
+	return pointer;
+
+
+
+}
 int login_user(const char *username)
 {
   struct pwdb_passwd *p = pwdb_getpwnam(username);
@@ -58,6 +85,11 @@ int main(int argc, char **argv)
 {
   char username[USERNAME_SIZE];
   
+
+	char str = "tjena";
+
+	printf(*substring(str, 0, 2);
+
   /* 
    * Write "login: " and read user input. Copies the username to the
    * username variable.
