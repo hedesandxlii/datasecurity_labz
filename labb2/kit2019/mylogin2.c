@@ -14,6 +14,7 @@
 /* Define some constants. */
 #define USERNAME_SIZE (32)
 #define NOUSER (-1)
+#define MAX_PW_AGE (10)
 
 int login_user(const char *username)
 {
@@ -33,6 +34,11 @@ int login_user(const char *username)
         // Is the stored hash the same as the calculated one?
         if (strcmp(p->pw_passwd, pwhash) == 0) {
             p->pw_failed = 0;
+            p->pw_age++;
+            if(p->pw_age >= MAX_PW_AGE) {
+                printf("\nYour password has been used for %d logins...\n", p->pw_age);
+                printf("\n...Time to change ( ͡° ͜ʖ ͡°).\n")
+            }
             printf("\nDucking success mate\n");
         } else {
             p->pw_failed++;
