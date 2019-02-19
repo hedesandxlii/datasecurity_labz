@@ -86,9 +86,12 @@ int main(int argc, char **argv)
   char username[USERNAME_SIZE];
   
 
-	char *str = "tjena";
+	char str[100] = "tjena";
+	char *pointer;
 
-	printf(*substring(str, 0, 2));
+	pointer = substring(str, 0,2);
+
+	printf("%s\n",pointer);
 
   /* 
    * Write "login: " and read user input. Copies the username to the
