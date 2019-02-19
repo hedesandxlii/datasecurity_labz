@@ -15,17 +15,18 @@
 #define NOUSER (-1)
 
 
-int print_info(const char *username)
+int login_user(const char *username)
 {
   struct pwdb_passwd *p = pwdb_getpwnam(username);
   if (p != NULL) {
-    printf("Name: %s\n", p->pw_name);
-    printf("Passwd: %s\n", p->pw_passwd);
-    printf("Uid: %u\n", p->pw_uid);
-    printf("Gid: %u\n", p->pw_gid);
-    printf("Real name: %s\n", p->pw_gecos);
-    printf("Home dir: %s\n",p->pw_dir);
-    printf("Shell: %s\n", p->pw_shell);
+      char *password = malloc(20); // passwordsize 20. Why not?
+
+      password = getpass("password: ");
+      if(strcmp(p->pw_passwd, password) == 0) {
+          printf("\nDucking success mate\n");
+      } else {
+          printf("\nDucking wrong mate\n");
+      }
 	return 0;
   } else {
     return NOUSER;
@@ -52,15 +53,10 @@ int main(int argc, char **argv)
    * username variable.
    */
   read_username(username);
-  char *password = malloc(20); // passwordsize 20. Why not?
-  password = getpass("password: ");
-  printf("%s\n", password);
 
-  /* Show user info from our local pwfile. */
-  if (print_info(username) == NOUSER) {
-      /* if there are no user with that usename... */
-      printf("\nFound no user with name: %s\n", username);   
-      return 0;
+  if (login_user(username) == NOUSER) {
+    printf("\nFound no user with name: %s\n", username); 
+    return 0;
   }
 }
   
