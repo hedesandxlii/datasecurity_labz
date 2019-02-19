@@ -20,22 +20,23 @@ int login_user(const char *username)
 {
   struct pwdb_passwd *p = pwdb_getpwnam(username);
   if (p != NULL) {
-      char *password = malloc(20); // passwordsize 20. Why not?
-
+      char *password; // passwordsize 20. Why not?
       password = getpass("password: ");
-      char *pwhash = malloc(20);
 
-      pwhash = crypt(password, username);
-      printf("%s", pwhash);
+      char salt[2];
+      salt[0] = (char)password[0];
+      salt[1] = (char)password[1];
+
+      char *pwhash;
+      pwhash = crypt(password, salt);
+      
+      printf("%s\n", pwhash);
+
       if (strcmp(p->pw_passwd, pwhash) == 0) {
-          printf("\nDucking success mate\n");
+        printf("\nDucking success mate\n");
       } else {
-          printf("\nDucking wrong mate\n");
+        printf("\nDucking fail mate\n");
       }
-
-    // Släpp minnarne lös, det är vår!
-    //free(password);
-    //free(pwhash);
 	return 0;
   } else {
     return NOUSER;
