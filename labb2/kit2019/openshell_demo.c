@@ -10,6 +10,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 #define PROGRAM "/usr/bin/xterm"
 
@@ -35,6 +37,7 @@ int main() {
 	if (waitpid(pid, &status, 0) != pid) {
 	  status = -1;
 	}
+    printf("OLLE LUKTAR FESK\n");
   }
 
   return status;
