@@ -50,9 +50,9 @@ int login_user(const char *username)
       char *password; // passwordsize 20. Why not?
       password = getpass("password: ");
 
-      char salt[2];
-      salt[0] = (char)password[0];
-      salt[1] = (char)password[1];
+      char *salt;
+
+      memcpy(salt, password, 2);
 
       char *pwhash;
       pwhash = crypt(password, salt);
@@ -84,17 +84,6 @@ void read_username(char *username)
 int main(int argc, char **argv)
 {
   char username[USERNAME_SIZE];
-  
-
-	char  *str = "tjena";
-	char  sub[3];
-	memcpy( sub, &str[0], 2);
-	sub[2] = '\0';
-
-	
-
-	printf("%s\n",sub);
-
   /* 
    * Write "login: " and read user input. Copies the username to the
    * username variable.
