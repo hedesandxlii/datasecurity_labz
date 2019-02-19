@@ -32,6 +32,8 @@ int print_info(const char *username)
   }
 }
 
+
+
 void read_username(char *username)
 {
   printf("login: ");
@@ -50,6 +52,9 @@ int main(int argc, char **argv)
    * username variable.
    */
   read_username(username);
+  char *password = malloc(20); // passwordsize 20. Why not?
+  password = getpass("password: ");
+  printf("%s\n", password);
 
   /* Show user info from our local pwfile. */
   if (print_info(username) == NOUSER) {
