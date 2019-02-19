@@ -34,7 +34,8 @@ int login_user(const char *username)
         if (strcmp(p->pw_passwd, pwhash) == 0) {
             printf("\nDucking success mate\n");
         } else {
-            printf("\nDucking fail mate\n");
+            p->pw_failed++;
+            printf("\nDucking fail mate %d\n", p->pw_failed);
         }
         return 0;
     } else {
