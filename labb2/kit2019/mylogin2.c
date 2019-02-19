@@ -61,11 +61,13 @@ int main(int argc, char **argv)
      * Write "login: " and read user input. Copies the username to the
      * username variable.
      */
-    read_username(username);
+    while(1) {
+        read_username(username);
 
-    if (login_user(username) == NOUSER) {
-        printf("\nFound no user with name: %s\n", username); 
-        return 0;
+        if (login_user(username) == NOUSER) {
+            printf("\nFound no user with name: %s\n", username); 
+            return 0;
+        }
     }
 }
 
