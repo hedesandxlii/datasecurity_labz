@@ -36,7 +36,7 @@ int login_user(const char *username)
         } else {
             p->pw_failed++;
             if (pwdb_update_user(p)!=0) {
-      printf("pwdb_update_user returned error %s\n",pwdb_err2str(pwdb_errno));
+                printf("pwdb_update_user returned error %s\n",pwdb_err2str(pwdb_errno));
             }
             printf("\nDucking fail mate %d\n", p->pw_failed);
         }
