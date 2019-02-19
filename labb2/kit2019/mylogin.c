@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <crypt.h>
 #include "pwdblib.h"   /* include header declarations for pwdblib.c */
 
 /* Define some constants. */
@@ -22,11 +23,19 @@ int login_user(const char *username)
       char *password = malloc(20); // passwordsize 20. Why not?
 
       password = getpass("password: ");
-      if(strcmp(p->pw_passwd, password) == 0) {
+      char *pwhash = malloc(20);
+
+      pwhash = crypt(password, username);
+      printf("%s", pwhash);
+      if (strcmp(p->pw_passwd, pwhash) == 0) {
           printf("\nDucking success mate\n");
       } else {
           printf("\nDucking wrong mate\n");
       }
+
+    // Släpp minnarne lös, det är vår!
+    //free(password);
+    //free(pwhash);
 	return 0;
   } else {
     return NOUSER;
